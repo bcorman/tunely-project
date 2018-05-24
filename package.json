@@ -1,0 +1,31 @@
+{
+  "name": "tunely-project",
+  "version": "1.0.0",
+  "description": "tunely-project",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcorman/tunely-project.git"
+  },
+  "keywords": [
+    "tunely"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcorman/tunely-project/issues"
+  },
+  "homepage": "https://github.com/bcorman/tunely-project#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^6.1.0",
+    "body-parser": "^1.15.0",
+    "mongoose": "^5.1.2"
+  }
+}
