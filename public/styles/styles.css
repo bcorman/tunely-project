@@ -13,3 +13,8 @@
   vertical-align: baseline;
   margin-right: 12px;
 }
+
+.album {
+  margin: 2em 0;
+  border: 1px solid green;
+}

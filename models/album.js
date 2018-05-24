@@ -3,7 +3,10 @@ var mongoose = require('mongoose'),
 
 var AlbumSchema = new Schema({
   name: String,
-  artist: String,
+  artist: {
+       type: Schema.Types.ObjectId,
+       ref: 'Artist'
+     },
   label: String,
   releaseDate: String,
   genre: [String],

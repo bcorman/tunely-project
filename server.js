@@ -27,7 +27,21 @@ app.get('/', function (req, res) {
   res.sendFile('views/index.html' , { root : __dirname});
 });
 
+//Get controllers
+var controllers = require('./controllers');
 
+//Route for Get API
+
+//albums
+app.get('/api', controllers.api.index);
+app.get('/api/albums', controllers.album.index);
+app.get('/api/albums/:id', controllers.album.show);
+app.delete('/api/albums/:id', controllers.album.destroy)
+app.put('/api/albums/:id', controllers.album.update)
+app.post('/api/albums/', controllers.album.create)
+
+//artists
+app.get('/api/artists', controllers.artist.index)
 
 
 

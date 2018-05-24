@@ -22,22 +22,55 @@ var sampleAlbums = [{
   genre: [ 'piano' ]
 }];
 
+var sampleArtists = [{
+  name: 'Ladyhawke'
+}, {
+  name: 'The Knife'
+}, {
+  name: 'Juno Reactor'
+}, {
+  name: 'Philip Wesley'
+}]
+
+
+//remove all artists
+db.Artist.remove({}, (err, success) => {
+  if (err) { console.log(err) }
+  console.log(`removed all artists`)
+
+  //create all artists
+  db.Artist.create(sampleArtists, (err, artists) => {
+    if (err) { console.log(err) }
+    console.log(`created artists`)
 
 //remove all albums
-db.Album.remove({}, (err, success) => {
-  if (err) { console.log(err) }
-  console.log(`removed all albums`)
+    db.Album.remove({}, (err, success) => {
+      if (err) { console.log(err) }
+      console.log(`removed all artists`)
 
-  //create all albums
-  db.Album.create(sampleAlbums, (err, albums) => {
-    if (err) { console.log(err) }
-    console.log(`created albums`)
+//create new album
+      sampleAlbums.forEach( album => {
+        let newAlbum = new db.Album({
+          name: album.name,
+          releaseDate: album.releaseDate,
+          genre: album.genre
+        })
 
-
+        //for each album, find an artist from the artist database
+        db.Artist.findOne({name: album.artist}, (err, foundArtist) => {
+          if (err) { console.log(err) }
+          newAlbum.artist = foundArtist
+          //save the album to the database
+          newAlbum.save((err,success) => {
+            if (err) { console.log(err) }
+            console.log(`success`)
+          })
+        })
+      })
+    })
   })
-
-
 })
+
 // db.Author.remove({}, (err, success) => {
 //   if (err) { console.log(err) }
 //   console.log(`Removed all authors`)

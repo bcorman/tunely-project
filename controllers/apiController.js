@@ -1,7 +1,7 @@
 // controllers/apiController.js
 function index(req, res) {
   res.json({
-    message: 'Welcome to tunely!',
+    message: 'Welcome to hell!',
     documentation_url: 'https://github.com/sf-wdi-labs/tunely',
     base_url: 'localhost:3000',
     endpoints: [
