@@ -2,7 +2,7 @@
   "name": "tunely-project",
   "version": "1.0.0",
   "description": "tunely-project",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
